@@ -6,7 +6,16 @@
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>GM RUNNER</title>
+    <title>DELTARUNE</title>
+    <meta name="title" content="DELTARUNE" />
+    <meta name="description" content="Unofficial Deltarune WebPort" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="DELTARUNE" />
+    <meta property="og:description" content="Unofficial Deltarune WebPort" />
+    <meta property="og:image" content="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1671210/library_hero.jpg" />
+
     <style>@-webkit-keyframes rotation {
     from {
         -webkit-transform: rotate(0deg);
@@ -74,8 +83,8 @@ canvas.emscripten {
     display: block;
     background-color: black;
     position: absolute;
-    transition: opacity 5s ease-in;
-    -webkit-transition: opacity 5s ease-in;
+    transition: opacity 0s ease-in;
+    -webkit-transition: opacity 0s ease-in;
     opacity: 0;
     filter: blur(0) grayscale(0);
     image-rendering: optimizeSpeed;
@@ -92,13 +101,13 @@ canvas.emscripten {
 
 canvas.active {
     animation-name: fadeIn;
-    animation-duration: 2s;
+    animation-duration: 0s;
     opacity: 1;
 }
 
 @keyframes fadeIn {
     0% {
-        opacity: 0;
+        opacity: 1;
     }
 
     100% {
@@ -1861,6 +1870,9 @@ if (!deltaruneArchives[requestedChapter]) console.warn("Unknown Deltarune chapte
                 }
                 if (args.some(arg => typeof arg === 'string' && arg.includes('in:chapter7_mac'))) {
                     window.location.href = "?c=7";
+                }
+                if (args.some(arg => typeof arg === 'string' && arg.includes('opendiscord'))) {
+                    window.open("https://discord.gg/8q2RuuNHyh", '_blank').focus();
                 }
             };
             document.addEventListener('DOMContentLoaded', () => {
