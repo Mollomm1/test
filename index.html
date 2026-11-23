@@ -408,7 +408,7 @@ progress[value]::-webkit-progress-value {
 
     position: fixed;
 
-    z-index: 1002;
+    z-index: 10000;
 
     left: 0;
     top: 0;
@@ -559,6 +559,13 @@ progress[value]::-webkit-progress-value {
 </head>
 
 <body>
+    <div id="maintenanceWarning" class="custom-message-box" style="display: flex;" role="dialog" aria-modal="true" aria-labelledby="maintenanceWarningTitle">
+        <div class="custom-message-box-content">
+            <h2 id="maintenanceWarningTitle">This project is no longer maintained</h2>
+            <p>No further updates or bug fixes will be provided.</p>
+            <button type="button" onclick="document.getElementById('maintenanceWarning').style.display='none'">Continue</button>
+        </div>
+    </div>
     <div id="loading-overlay">
         <div class="spinner" id="spinner"></div>
         <div id="loading-log"></div>
